@@ -34,6 +34,7 @@ Included now:
 - Dockerfile and `docker-compose.yml`
 - Python package skeleton
 - CLI entry point
+- runnable synthetic grouped inversion demo
 - configuration schema and example config
 - data layout and container usage documentation
 - Emilia-Romagna example configuration
@@ -104,6 +105,18 @@ docker compose run --rm app hisi check-config /workspace/configs/emilia_romagna.
 docker compose run --rm app hisi show-paths /workspace/configs/emilia_romagna.example.yaml
 ```
 
+### Run the minimal synthetic demo
+
+```bash
+docker compose run --rm app hisi demo-synthetic --output-dir /workspace/outputs/demo
+```
+
+This writes:
+
+- `outputs/demo/synthetic_demo_summary.json`
+- `outputs/demo/synthetic_demo_timeseries.csv`
+- `outputs/demo/synthetic_demo_figure.png`
+
 ### Start a notebook server
 
 ```bash
@@ -153,10 +166,9 @@ Short-term:
 Medium-term:
 
 - support multiple study areas cleanly
-- provide a small synthetic demo dataset
+- expand the synthetic demo into a fuller reproducible tutorial
 - add tests and CI checks
 
 Long-term:
 
 - release a stable, fully reproducible containerized workflow
-
